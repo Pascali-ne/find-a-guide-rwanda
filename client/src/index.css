@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Public Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Rwandan flag green as the brand scale; flag yellow and blue as accents. */
+  --color-forest-50: #eef6f0;
+  --color-forest-100: #d6eadb;
+  --color-forest-200: #aed5b8;
+  --color-forest-300: #7fb98f;
+  --color-forest-400: #4f9a67;
+  --color-forest-500: #2f7f4d;
+  --color-forest-600: #20603d;
+  --color-forest-700: #1b4d33;
+  --color-forest-800: #173d2a;
+  --color-forest-900: #112b1e;
+  --color-sun-300: #fce065;
+  --color-sun-400: #fad201;
+  --color-sun-500: #e2bc00;
+  --color-lake-100: #d9f1fb;
+  --color-lake-600: #0485b8;
+  --color-ink: #17231c;
+  --color-paper: #f4f6f0;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+:focus-visible { outline: 2px solid var(--color-lake-600); outline-offset: 2px; }
+
+/* Imigongo-inspired band (Rwandan geometric wall art): the one decorative motif of the interface. */
+.imigongo {
+  height: 14px;
+  background-color: var(--color-forest-900);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M0 7 7 0l7 7-7 7z' fill='%23fad201'/%3E%3Cpath d='M14 7l7-7 7 7-7 7z' fill='%23f4f6f0'/%3E%3Cpath d='M7 7l3.5-3.5L14 7l-3.5 3.5z' fill='%23112b1e'/%3E%3Cpath d='M21 7l3.5-3.5L28 7l-3.5 3.5z' fill='%23112b1e'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
